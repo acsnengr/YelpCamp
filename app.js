@@ -1,9 +1,9 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config({ quiet: true });
-}
-// process.env.NODE_ENV = "production";
-// console.log(process.env.NODE_ENV);
-// require("dotenv").config({ quiet: true });
+// if (process.env.NODE_ENV !== "production") {
+//   require("dotenv").config({ quiet: true });
+// }
+process.env.NODE_ENV = "production";
+console.log(process.env.NODE_ENV);
+require("dotenv").config({ quiet: true });
 
 // console.log(process.env.CLOUDINARY_CLOUD_NAME);
 // console.log(process.env.CLOUDINARY_KEY);
