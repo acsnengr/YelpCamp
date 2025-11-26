@@ -1,9 +1,9 @@
-// if (process.env.NODE_ENV !== "production") {
-//   require("dotenv").config({ quiet: true });
-// }
-process.env.NODE_ENV = "production";
-console.log(process.env.NODE_ENV);
-require("dotenv").config({ quiet: true });
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ quiet: true });
+}
+// process.env.NODE_ENV = "production";
+// console.log(process.env.NODE_ENV);
+// require("dotenv").config({ quiet: true });
 
 // console.log(process.env.CLOUDINARY_CLOUD_NAME);
 // console.log(process.env.CLOUDINARY_KEY);
@@ -143,12 +143,6 @@ app.use((req, res, next) => {
   res.locals.error = req.flash("error");
   next();
 });
-
-// app.get("/fakeUser", async (req, res) => {
-//   const user = new User({ email: "batman@gmail.com", username: "batman" });
-//   const newUser = await User.register(user, "robin");
-//   res.send(newUser);
-// });
 
 app.use("/", userRoutes);
 app.use("/campgrounds", campgroundRoutes);

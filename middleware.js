@@ -3,15 +3,16 @@ const ExpressError = require("./utils/ExpressError");
 const Campground = require("./models/campground");
 const Review = require("./models/review");
 
+
+  // NOTE: Do not FORGET to put RETURN if there
+  // is NO "else" after if
+  // if not you will get "HEADER ERROR
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.session.returnTo = req.originalUrl;
     req.flash("error", "You are not signed in");
     return res.redirect("/login");
   }
-  // NOTE: Do not FORGET to put RETURN if there
-  // is NO "else" after if
-  // if not you will get "HEADER ERROR
   next();
 };
 
